@@ -12,7 +12,7 @@ if(MSVC)
 endif()
 
 if(${COVERAGE})
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -coverage -O0 -fno-inline")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -coverage -Og -fno-inline -fno-early-inlining")
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage")
 endif()
 
