@@ -7,8 +7,6 @@
 #include <gtest/gtest.h>
 #include <ArduinoJson.h>
 
-#define NIGHSCOUT_JSON_SIZE
-
 TEST(Nightscout, ExtractSgv) {
   char json[] =
       "{\"status\":[{\"now\":1426277351973}],\"bgs\":[{\"sgv\":\"245\","
