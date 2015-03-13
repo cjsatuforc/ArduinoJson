@@ -11,23 +11,9 @@
 
 TEST(Nightscout, ExtractSgv) {
   char json[] =
-      "{"
-      "  status: [{"
-      "      now: 1426017007130"
-      "  }],"
-      "  bgs: [{"
-      "      sgv: \"102\","
-      "      bgdelta: 2,"
-      "      trend: 4,"
-      "      direction: \"Flat\","
-      "      datetime: 1426016912000,"
-      "      filtered: 115232,"
-      "      unfiltered: 118368,"
-      "      noise: 1,"
-      "      rssi: 191,"
-      "      battery: \"59\""
-      "  }]"
-      "}";
+      "{\"status\":[{\"now\":1426277351973}],\"bgs\":[{\"sgv\":\"245\","
+      "\"bgdelta\":2,\"trend\":4,\"direction\":\"Flat\",\"datetime\":"
+      "1426254513000,\"battery\":\"24\"}]}";
 
   DynamicJsonBuffer jsonBuffer;
 
@@ -35,5 +21,5 @@ TEST(Nightscout, ExtractSgv) {
   ASSERT_TRUE(root.success());
 
   int sgv = root["bgs"][0]["sgv"];
-  ASSERT_EQ(102, sgv);
+  ASSERT_EQ(245, sgv);
 }
