@@ -18,6 +18,6 @@ TEST(Nightscout, ExtractSgv) {
   JsonObject& root = jsonBuffer.parseObject(json);
   ASSERT_TRUE(root.success());
 
-  int sgv = root["bgs"][0]["sgv"];
-  ASSERT_EQ(245, sgv);
+  const char* sgv = root["bgs"][0]["sgv"];
+  ASSERT_STREQ("245", sgv);
 }
