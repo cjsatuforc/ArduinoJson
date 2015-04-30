@@ -20,6 +20,7 @@ class StaticJsonBuffer : public JsonBuffer {
 
   size_t capacity() const { return CAPACITY; }
   size_t size() const { return _size; }
+  void clear() { _size = 0; }
 
  protected:
   virtual void* alloc(size_t bytes) {
