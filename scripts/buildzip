@@ -1,0 +1,28 @@
+#! /bin/bash
+
+echo "SCRIPT	: buildzip"
+echo "HELP	: build zip file for Arduino installation"
+
+TAG=`git log --pretty=format:'%H' -n 1`
+OUTPUT="ArduinoJson-$TAG.zip"
+
+echo "STATUS	: creating $OUTPUT"
+
+rm -f $OUTPUT
+
+pushd ..
+
+zip -r $OUTPUT \
+	ArduinoJson/CHANGELOG.md \
+	ArduinoJson/examples \
+	ArduinoJson/include \
+	ArduinoJson/keywords.txt \
+	ArduinoJson/LICENSE.md \
+	ArduinoJson/README.md \
+	ArduinoJson/src	\
+	ArduinoJson/ArduinoJson.h \
+	ArduinoJson/ArduinoJson.cpp	\
+    -x \
+	ArduinoJson/src/CMakeLists.txt
+
+popd
