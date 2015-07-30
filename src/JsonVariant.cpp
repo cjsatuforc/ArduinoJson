@@ -23,6 +23,9 @@ JsonVariant::operator JsonObject &() const {
 }
 
 JsonVariant::operator bool() const {
+  if (_type == JSON_LONG) {
+  	return _content.asLong ? true : false;
+  }
   return _type == JSON_BOOLEAN ? _content.asBoolean : false;
 }
 

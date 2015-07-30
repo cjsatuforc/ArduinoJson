@@ -50,7 +50,7 @@ class JsonVariant : public Internals::JsonPrintable<JsonVariant> {
   // Sets the variant to a floating point value.
   // The second argument specifies the number of decimal digits to write in
   // the JSON string.
-  void set(double value, uint8_t decimals = 2);
+  void set(double value, uint8_t decimals = 3);
 
   // Sets the variant to be an integer value.
   void set(signed long value);
