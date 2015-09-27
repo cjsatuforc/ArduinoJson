@@ -10,7 +10,7 @@ echo "STATUS	: creating $OUTPUT"
 
 rm -f $OUTPUT
 
-pushd ..
+pushd .. >& /dev/null
 
 zip -r -q $OUTPUT \
 	ArduinoJson/CHANGELOG.md \
@@ -25,4 +25,4 @@ zip -r -q $OUTPUT \
     -x \
 	ArduinoJson/src/CMakeLists.txt
 
-popd
+popd >& /dev/null
