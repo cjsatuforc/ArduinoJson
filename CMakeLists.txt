@@ -16,5 +16,7 @@ if(${COVERAGE})
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage")
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-float-conversion") # Raspberry Pi weirdness
+
 add_subdirectory(src)
 add_subdirectory(test)
