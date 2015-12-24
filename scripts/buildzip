@@ -19,6 +19,7 @@ zip -r -q $OUTPUT \
 	ArduinoJson/keywords.txt \
 	ArduinoJson/LICENSE.md \
 	ArduinoJson/README.md \
+	ArduinoJson/library.json \
 	ArduinoJson/src	\
 	ArduinoJson/ArduinoJson.h \
 	ArduinoJson/ArduinoJson.cpp	\
