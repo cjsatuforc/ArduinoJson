@@ -9,3 +9,5 @@ CMakeCache.txt
 CMakeFiles
 Makefile
 core
+/Release/
+/Debug/
