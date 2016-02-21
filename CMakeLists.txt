@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(ArduinoJson)
 
-enable_testing()
+if(NOT DEFINED MACHINE)
+	enable_testing()
+endif()
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
@@ -19,4 +21,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-float-conversion") # Raspberry Pi weirdness
 
 add_subdirectory(src)
-add_subdirectory(test)
+
+if(NOT DEFINED MACHINE)
+	add_subdirectory(test)
+endif()
