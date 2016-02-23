@@ -6,7 +6,7 @@
 
 #pragma once
 
-#ifndef ARDUINO
+#if !(defined(ARDUINO) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__))
 
 #include <stddef.h>
 #include <stdint.h>
