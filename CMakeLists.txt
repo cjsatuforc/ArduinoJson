@@ -18,6 +18,8 @@ if(${COVERAGE})
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage")
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-float-conversion") # Raspberry Pi weirdness
+
 if(DEFINED INC_DIR)
 	include_directories(${INC_DIR})
 endif()
